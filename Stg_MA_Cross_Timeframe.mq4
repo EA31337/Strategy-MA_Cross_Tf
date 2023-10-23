@@ -6,8 +6,8 @@
 
 /**
  * @file
- * Implements MA Cross Tf strategy.
+ * Implements MA Cross Timeframe strategy.
  */
 
 // Includes the main code.
-#include "Stg_MA_Cross_Tf.mq5"
+#include "Stg_MA_Cross_Timeframe.mq5"

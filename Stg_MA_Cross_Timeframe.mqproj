@@ -2,7 +2,7 @@
   "platform"    :"mt5",
   "program_type":"expert",
   "copyright"   :"Copyright 2016-2023, EA31337 Ltd",
-  "link"        :"https:\/\/github.com\/EA31337\/Strategy-MA_Cross_Tf",
+  "link"        :"https:\/\/github.com\/EA31337\/Strategy-MA_Cross_Timeframe",
   "version"     :"2.000",
   "description" :"Strategy based on the moving average price indicators implementing another timeframe cross signal.",
   "optimize"    :"0",
@@ -15,7 +15,7 @@
   "files":
   [
     {
-      "path":"Stg_MA_Cross_Tf.mq5",
+      "path":"Stg_MA_Cross_Timeframe.mq5",
       "compile":true,
       "relative_to_project":true
     },
@@ -215,7 +215,7 @@
       "relative_to_project":false
     },
     {
-      "path":"Stg_MA_Cross_Tf.mqh",
+      "path":"Stg_MA_Cross_Timeframe.mqh",
       "compile":false,
       "relative_to_project":true
     },
