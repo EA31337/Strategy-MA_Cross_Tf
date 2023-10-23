@@ -6,7 +6,7 @@
 
 /**
  * @file
- * Implements MA Cross Shift strategy.
+ * Implements MA Cross Tf strategy.
  */
 
 // Includes the main code.
