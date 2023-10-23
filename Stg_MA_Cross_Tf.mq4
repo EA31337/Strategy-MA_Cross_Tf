@@ -10,4 +10,4 @@
  */
 
 // Includes the main code.
-#include "Stg_MA_Cross_Shift.mq5"
+#include "Stg_MA_Cross_Tf.mq5"

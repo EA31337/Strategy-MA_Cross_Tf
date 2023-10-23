@@ -1,4 +1,4 @@
-# Strategy MA Cross Shift
+# Strategy MA Cross Tf
 
 [![Status][gha-image-check-master]][gha-link-check-master]
 [![Status][gha-image-compile-master]][gha-link-compile-master]
@@ -8,7 +8,7 @@
 [![Edit][gh-edit-badge]][gh-edit-link]
 
 Strategy based on the moving average price indicators
-implementing shifted cross signal.
+implementing another timeframe cross signal.
 
 ## Dependencies
 
@@ -22,12 +22,12 @@ implementing shifted cross signal.
 [gh-discuss-link]: https://github.com/EA31337/EA31337-Strategies/discussions
 
 [gh-edit-badge]: https://img.shields.io/badge/GitHub-edit-purple.svg?logo=github
-[gh-edit-link]: https://github.dev/EA31337/Strategy-MA_Cross_Shift
+[gh-edit-link]: https://github.dev/EA31337/Strategy-MA_Cross_Tf
 
-[gha-link-check-master]: https://github.com/EA31337/Strategy-MA_Cross_Shift/actions?query=workflow:Check+branch%3Amaster
-[gha-image-check-master]: https://github.com/EA31337/Strategy-MA_Cross_Shift/workflows/Check/badge.svg?branch=master
-[gha-link-compile-master]: https://github.com/EA31337/Strategy-MA_Cross_Shift/actions?query=workflow:Compile+branch%3Amaster
-[gha-image-compile-master]: https://github.com/EA31337/Strategy-MA_Cross_Shift/workflows/Compile/badge.svg?branch=master
+[gha-link-check-master]: https://github.com/EA31337/Strategy-MA_Cross_Tf/actions?query=workflow:Check+branch%3Amaster
+[gha-image-check-master]: https://github.com/EA31337/Strategy-MA_Cross_Tf/workflows/Check/badge.svg?branch=master
+[gha-link-compile-master]: https://github.com/EA31337/Strategy-MA_Cross_Tf/actions?query=workflow:Compile+branch%3Amaster
+[gha-image-compile-master]: https://github.com/EA31337/Strategy-MA_Cross_Tf/workflows/Compile/badge.svg?branch=master
 
 [tg-channel-image]: https://img.shields.io/badge/Telegram-join-0088CC.svg?logo=telegram
 [tg-channel-link]: https://t.me/EA31337
