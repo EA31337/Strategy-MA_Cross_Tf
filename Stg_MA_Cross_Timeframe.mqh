@@ -128,7 +128,7 @@ class Stg_MA_Cross_Timeframe : public Strategy {
     // Initialize Strategy instance.
     ChartParams _cparams(_tf, _Symbol);
     TradeParams _tparams;
-    Strategy *_strat = new Stg_MA_Cross_Timeframe(_stg_params, _tparams, _cparams, "MA");
+    Strategy *_strat = new Stg_MA_Cross_Timeframe(_stg_params, _tparams, _cparams, "MA Cross Timeframe");
     return _strat;
   }
 
