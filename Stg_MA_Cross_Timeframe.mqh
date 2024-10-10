@@ -144,11 +144,10 @@ class Stg_MA_Cross_Timeframe : public Strategy {
             ::MA_Cross_Timeframe_Indi_AMA_InpPeriodAMA, ::MA_Cross_Timeframe_Indi_AMA_InpFastPeriodEMA,
             ::MA_Cross_Timeframe_Indi_AMA_InpSlowPeriodEMA, ::MA_Cross_Timeframe_Indi_AMA_InpShiftAMA, PRICE_TYPICAL,
             ::MA_Cross_Timeframe_Indi_AMA_Shift);
-        _indi_params.SetDataSourceType(::MA_Cross_Timeframe_Indi_AMA_SourceType);
         _indi_params.SetTf(Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF));
-        SetIndicator(new Indi_AMA(_indi_params), ::MA_Cross_Timeframe_Type);
+        SetIndicator(new Indi_AMA(_indi_params, ::MA_Cross_Timeframe_Indi_AMA_SourceType), ::MA_Cross_Timeframe_Type);
         _indi_params.SetTf(::MA_Cross_Timeframe_Timeframe);
-        SetIndicator(new Indi_AMA(_indi_params), ::MA_Cross_Timeframe_Type + 1);
+        SetIndicator(new Indi_AMA(_indi_params, ::MA_Cross_Timeframe_Indi_AMA_SourceType), ::MA_Cross_Timeframe_Type + 1);
         break;
       }
       case STG_MA_CROSS_TIMEFRAME_TYPE_DEMA:  // DEMA
@@ -156,11 +155,10 @@ class Stg_MA_Cross_Timeframe : public Strategy {
         IndiDEIndiMAParams _indi_params(::MA_Cross_Timeframe_Indi_DEMA_Period, ::MA_Cross_Timeframe_Indi_DEMA_MA_Shift,
                                         ::MA_Cross_Timeframe_Indi_DEMA_Applied_Price,
                                         ::MA_Cross_Timeframe_Indi_DEMA_Shift);
-        _indi_params.SetDataSourceType(::MA_Cross_Timeframe_Indi_DEMA_SourceType);
         _indi_params.SetTf(Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF));
-        SetIndicator(new Indi_DEMA(_indi_params), ::MA_Cross_Timeframe_Type);
+        SetIndicator(new Indi_DEMA(_indi_params, ::MA_Cross_Timeframe_Indi_DEMA_SourceType), ::MA_Cross_Timeframe_Type);
         _indi_params.SetTf(::MA_Cross_Timeframe_Timeframe);
-        SetIndicator(new Indi_DEMA(_indi_params), ::MA_Cross_Timeframe_Type + 1);
+        SetIndicator(new Indi_DEMA(_indi_params, ::MA_Cross_Timeframe_Indi_DEMA_SourceType), ::MA_Cross_Timeframe_Type + 1);
         break;
       }
       case STG_MA_CROSS_TIMEFRAME_TYPE_FRAMA:  // FrAMA
@@ -168,11 +166,10 @@ class Stg_MA_Cross_Timeframe : public Strategy {
         IndiFrAIndiMAParams _indi_params(
             ::MA_Cross_Timeframe_Indi_FrAMA_Period, ::MA_Cross_Timeframe_Indi_FrAMA_MA_Shift,
             ::MA_Cross_Timeframe_Indi_FrAMA_Applied_Price, ::MA_Cross_Timeframe_Indi_FrAMA_Shift);
-        _indi_params.SetDataSourceType(::MA_Cross_Timeframe_Indi_FrAMA_SourceType);
         _indi_params.SetTf(Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF));
-        SetIndicator(new Indi_FrAMA(_indi_params), ::MA_Cross_Timeframe_Type);
+        SetIndicator(new Indi_FrAMA(_indi_params, ::MA_Cross_Timeframe_Indi_FrAMA_SourceType), ::MA_Cross_Timeframe_Type);
         _indi_params.SetTf(::MA_Cross_Timeframe_Timeframe);
-        SetIndicator(new Indi_FrAMA(_indi_params), ::MA_Cross_Timeframe_Type + 1);
+        SetIndicator(new Indi_FrAMA(_indi_params, ::MA_Cross_Timeframe_Indi_FrAMA_SourceType), ::MA_Cross_Timeframe_Type + 1);
         break;
       }
       case STG_MA_CROSS_TIMEFRAME_TYPE_ICHIMOKU:  // Ichimoku
@@ -180,11 +177,10 @@ class Stg_MA_Cross_Timeframe : public Strategy {
         IndiIchimokuParams _indi_params(
             ::MA_Cross_Timeframe_Indi_Ichimoku_Period_Tenkan_Sen, ::MA_Cross_Timeframe_Indi_Ichimoku_Period_Kijun_Sen,
             ::MA_Cross_Timeframe_Indi_Ichimoku_Period_Senkou_Span_B, ::MA_Cross_Timeframe_Indi_Ichimoku_Shift);
-        _indi_params.SetDataSourceType(::MA_Cross_Timeframe_Indi_Ichimoku_SourceType);
         _indi_params.SetTf(Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF));
-        SetIndicator(new Indi_Ichimoku(_indi_params), ::MA_Cross_Timeframe_Type);
+        SetIndicator(new Indi_Ichimoku(_indi_params, ::MA_Cross_Timeframe_Indi_Ichimoku_SourceType), ::MA_Cross_Timeframe_Type);
         _indi_params.SetTf(::MA_Cross_Timeframe_Timeframe);
-        SetIndicator(new Indi_Ichimoku(_indi_params), ::MA_Cross_Timeframe_Type + 1);
+        SetIndicator(new Indi_Ichimoku(_indi_params, ::MA_Cross_Timeframe_Indi_Ichimoku_SourceType), ::MA_Cross_Timeframe_Type + 1);
         break;
       }
       case STG_MA_CROSS_TIMEFRAME_TYPE_MA:  // MA
@@ -192,44 +188,40 @@ class Stg_MA_Cross_Timeframe : public Strategy {
         IndiMAParams _indi_params(::MA_Cross_Timeframe_Indi_MA_Period, ::MA_Cross_Timeframe_Indi_MA_MA_Shift,
                                   ::MA_Cross_Timeframe_Indi_MA_Method, ::MA_Cross_Timeframe_Indi_MA_Applied_Price,
                                   ::MA_Cross_Timeframe_Indi_MA_Shift);
-        _indi_params.SetDataSourceType(::MA_Cross_Timeframe_Indi_MA_SourceType);
         _indi_params.SetTf(Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF));
-        SetIndicator(new Indi_MA(_indi_params), ::MA_Cross_Timeframe_Type);
+        SetIndicator(new Indi_MA(_indi_params, ::MA_Cross_Timeframe_Indi_MA_SourceType), ::MA_Cross_Timeframe_Type);
         _indi_params.SetTf(::MA_Cross_Timeframe_Timeframe);
-        SetIndicator(new Indi_MA(_indi_params), ::MA_Cross_Timeframe_Type + 1);
+        SetIndicator(new Indi_MA(_indi_params, ::MA_Cross_Timeframe_Indi_MA_SourceType), ::MA_Cross_Timeframe_Type + 1);
         break;
       }
       case STG_MA_CROSS_TIMEFRAME_TYPE_PRICE_CHANNEL:  // Price Channel
       {
         IndiPriceChannelParams _indi_params(::MA_Cross_Timeframe_Indi_PriceChannel_Period,
                                             ::MA_Cross_Timeframe_Indi_PriceChannel_Shift);
-        _indi_params.SetDataSourceType(::MA_Cross_Timeframe_Indi_PriceChannel_SourceType);
         _indi_params.SetTf(Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF));
-        SetIndicator(new Indi_PriceChannel(_indi_params), ::MA_Cross_Timeframe_Type);
+        SetIndicator(new Indi_PriceChannel(_indi_params, ::MA_Cross_Timeframe_Indi_PriceChannel_SourceType), ::MA_Cross_Timeframe_Type);
         _indi_params.SetTf(::MA_Cross_Timeframe_Timeframe);
-        SetIndicator(new Indi_PriceChannel(_indi_params), ::MA_Cross_Timeframe_Type + 1);
+        SetIndicator(new Indi_PriceChannel(_indi_params, ::MA_Cross_Timeframe_Indi_PriceChannel_SourceType), ::MA_Cross_Timeframe_Type + 1);
         break;
       }
       case STG_MA_CROSS_TIMEFRAME_TYPE_SAR:  // SAR
       {
         IndiSARParams _indi_params(::MA_Cross_Timeframe_Indi_SAR_Step, ::MA_Cross_Timeframe_Indi_SAR_Maximum_Stop,
                                    ::MA_Cross_Timeframe_Indi_SAR_Shift);
-        _indi_params.SetDataSourceType(::MA_Cross_Timeframe_Indi_SAR_SourceType);
         _indi_params.SetTf(Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF));
-        SetIndicator(new Indi_SAR(_indi_params), ::MA_Cross_Timeframe_Type);
+        SetIndicator(new Indi_SAR(_indi_params, ::MA_Cross_Timeframe_Indi_SAR_SourceType), ::MA_Cross_Timeframe_Type);
         _indi_params.SetTf(::MA_Cross_Timeframe_Timeframe);
-        SetIndicator(new Indi_SAR(_indi_params), ::MA_Cross_Timeframe_Type + 1);
+        SetIndicator(new Indi_SAR(_indi_params, ::MA_Cross_Timeframe_Indi_SAR_SourceType), ::MA_Cross_Timeframe_Type + 1);
         break;
       }
       case STG_MA_CROSS_TIMEFRAME_TYPE_TEMA:  // TEMA
       {
         IndiTEMAParams _indi_params(::MA_Cross_Timeframe_Indi_TEMA_Period, ::MA_Cross_Timeframe_Indi_TEMA_MA_Shift,
                                     ::MA_Cross_Timeframe_Indi_TEMA_Applied_Price, ::MA_Cross_Timeframe_Indi_TEMA_Shift);
-        _indi_params.SetDataSourceType(::MA_Cross_Timeframe_Indi_TEMA_SourceType);
         _indi_params.SetTf(Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF));
-        SetIndicator(new Indi_TEMA(_indi_params), ::MA_Cross_Timeframe_Type);
+        SetIndicator(new Indi_TEMA(_indi_params, ::MA_Cross_Timeframe_Indi_TEMA_SourceType), ::MA_Cross_Timeframe_Type);
         _indi_params.SetTf(::MA_Cross_Timeframe_Timeframe);
-        SetIndicator(new Indi_TEMA(_indi_params), ::MA_Cross_Timeframe_Type + 1);
+        SetIndicator(new Indi_TEMA(_indi_params, ::MA_Cross_Timeframe_Indi_TEMA_SourceType), ::MA_Cross_Timeframe_Type + 1);
         break;
       }
       case STG_MA_CROSS_TIMEFRAME_TYPE_VIDYA:  // VIDYA
@@ -238,11 +230,10 @@ class Stg_MA_Cross_Timeframe : public Strategy {
                                      ::MA_Cross_Timeframe_Indi_VIDYA_MA_Shift,
                                      ::MA_Cross_Timeframe_Indi_VIDYA_Applied_Price,
                                      ::MA_Cross_Timeframe_Indi_VIDYA_Shift);
-        _indi_params.SetDataSourceType(::MA_Cross_Timeframe_Indi_VIDYA_SourceType);
         _indi_params.SetTf(Get<ENUM_TIMEFRAMES>(STRAT_PARAM_TF));
-        SetIndicator(new Indi_VIDYA(_indi_params), ::MA_Cross_Timeframe_Type);
+        SetIndicator(new Indi_VIDYA(_indi_params, ::MA_Cross_Timeframe_Indi_VIDYA_SourceType), ::MA_Cross_Timeframe_Type);
         _indi_params.SetTf(::MA_Cross_Timeframe_Timeframe);
-        SetIndicator(new Indi_VIDYA(_indi_params), ::MA_Cross_Timeframe_Type + 1);
+        SetIndicator(new Indi_VIDYA(_indi_params, ::MA_Cross_Timeframe_Indi_VIDYA_SourceType), ::MA_Cross_Timeframe_Type + 1);
         break;
       }
       case STG_MA_CROSS_TIMEFRAME_TYPE_0_NONE:  // (None)
@@ -255,8 +246,8 @@ class Stg_MA_Cross_Timeframe : public Strategy {
    * Check strategy's opening signal.
    */
   bool SignalOpen(ENUM_ORDER_TYPE _cmd, int _method = 0, float _level = 0.0f, int _shift = 0) {
-    IndicatorBase *_indi1 = GetIndicator(::MA_Cross_Timeframe_Type);
-    IndicatorBase *_indi2 = GetIndicator(::MA_Cross_Timeframe_Type + 1);
+    IndicatorData *_indi1 = GetIndicator(::MA_Cross_Timeframe_Type);
+    IndicatorData *_indi2 = GetIndicator(::MA_Cross_Timeframe_Type + 1);
     // uint _ishift = _indi1.GetParams().GetShift(); // @todo: Convert into Get().
     // uint _ishift = _indi2.GetParams().GetShift(); // @todo: Convert into Get().
     // bool _result = _indi.GetFlag(INDI_ENTRY_FLAG_IS_VALID, _shift); // @fixme
